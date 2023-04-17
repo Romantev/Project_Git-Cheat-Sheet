@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Cheat Sheet</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Git Cheat Sheet</h1>
+    </header>
+    <main>
+        <div class="buttons">
+            <button onclick="toggle1()">SETUP</button>
+            <button onclick="toggle2()">LOKAKE ÄNDERUNGEN</button>
+            <button onclick="toggle3()">BRANCH & MERGE</button>
+            <button onclick="toggle4()">PRÜFEN & VERGLEICHEN</button>
+            <button onclick="toggle5()">UPDATE & PUBLISH</button>
+            <button onclick="toggle6()">PFADÄNDERUNGEN</button> 
+        </div>
+        <section>
+            <article id="intro">
+                <h2>Für diejenigen, die die auch die Geburtstage der Familie vergessen :D</h2>
+                <p><-- Klick dich durch!</p>
+            </article>
+            <article id="setup">
+                <h2>SETUP</h2>
+                <p>Konfigurieren von Benutzerinformationen, die in allen lokalen Repositories verwendet werden</p>
+                <div>
+                    <h3>git config --global user.name “[Vorname Nachname]”</h3>
+                    <p>einen Namen festzulegen, der bei der Überprüfung des Versionsverlaufs für die Anerkennung identifizierbar ist</p>
+                </div>
+                <div>
+                    <h3>git config --global user.email “[gültige Email]”</h3>
+                    <p>eine E-Mail-Adresse festlegen, die mit jeder Verlaufsmarkierung verknüpft werden soll</p>
+                </div>
+                <div>
+                    <h3>git config --global color.ui auto</h3>
+                    <p>automatische Einfärbung der Befehlszeile für Git zur leichteren Überprüfung einstellen</p>
+                </div>
+                <div>
+                    <h3>git init</h3>
+                    <p>ein vorhandenes Verzeichnis als Git-Repository initialisieren</p>
+                </div>
+                <div>
+                    <h3>git clone [url]</h3>
+                    <p>ein gesamtes Repository von einem gehosteten Standort über eine URL abrufen</p>
+                </div>
+            </article>
+            <article id="änderungen">
+                <h2>LOKALE ÄNDERUNGEN</h2>
+                <p>Veränderungen der Files in der Working Copy</p>
+                <div>
+                    <h3>git status</h3>
+                    <p>geänderte Dateien im Arbeitsverzeichnis anzeigen, die für den nächsten Commit bereitgestellt werden</p>
+                </div>
+                <div>
+                    <h3>git add .</h3>
+                    <p>alle Dateien, wie sie jetzt aussiehen, zu den nächsten Commit hinzufügen (stage)</p>
+                </div>
+                <div>
+                    <h3>git reset [file]</h3>
+                    <p>eine Datei aufheben und die Änderungen im Arbeitsverzeichnis beibehalten</p>
+                </div>
+                <div>
+                    <h3>git diff</h3>
+                    <p>Änderungen zwischen Arbeitsverzeichnis und Staging-Bereich anzeigen</p>
+                </div>
+                <div>
+                    <h3>git commit -m “[Kommentar]”</h3>
+                    <p>zur Staging Area hinzugefügte Änderungen committen</p>
+                </div>
+            </article>
+            <article id="branch">
+                <h2>BRANCH & MERGE</h2>
+                <p>Isolierung der Arbeit in Zweigen, Änderung des Kontexts und Integration von Änderungen</p>
+                <div>
+                    <h3>git branch</h3>
+                    <p>Ihre Zweigstellen auflisten. Neben der derzeit aktiven Zweigstelle wird ein * angezeigt</p>
+                </div>
+                <div>
+                    <h3>git branch [branch-Name]</h3>
+                    <p>neuen lokalen Branch erstellen</p>
+                </div>
+                <div>
+                    <h3>git checkout [branch-Name]</h3>
+                    <p>wechseln zu einem anderem Zweig</p>
+                </div>
+                <div>
+                    <h3>git merge [branch-Name]</h3>
+                    <p>den Verlauf des angegebenen Zweigs mit dem aktuellen Verlauf zusammenführen</p>
+                </div>
+                <div>
+                    <h3>git branch -d [branch-Name]</h3>
+                    <p>lokalen Branch löschen</p>
+                </div>
+            </article>
+            <article id="prüfen">
+                <h2>PRÜFEN & VERGLEICHEN</h2>
+                <p>Prüfung von Protokollen, Diffs und Objektinformationen</p>
+                <div>
+                    <h3>git log</h3>
+                    <p>alle Commits in der Branch chronologisch anzeigen</p>
+                </div>
+                <div>
+                    <h3>git log branchB..branchA</h3>
+                    <p>die Commits auf ZweigA anzeigen, die nicht auf ZweigB sind</p>
+                </div>
+                <div>
+                    <h3>git log --oneline</h3>
+                    <p>zeigt die commits in einer Zeile an</p>
+                </div>
+                <div>
+                    <h3>git log --all --oneline --graph</h3>
+                    <p>zeigt alle commits in einer Zeile grafisch an</p>
+                </div>
+            </article>
+            <article id="publish">
+                <h2>UPDATE & PUBLISH</h2>
+                <p>Abrufen von Updates aus einem anderen Repository und Aktualisieren lokaler Repos</p>
+                <div>
+                    <h3>git push</h3>
+                    <p>lokale Änderungen pushen</p>
+                </div>
+                <div>
+                    <h3>git pull</h3>
+                    <p>alle Commits aus dem entfernten Verzweigungszweig abrufen und zusammenführen</p>
+                </div>
+                <div>
+                    <h3>git remote -v</h3>
+                    <p>alle konfigurierten remote Repos listen</p>
+                </div>
+            </article>
+            <article id="pfade">
+                <h2>PFADÄNDERUNGEN</h2>
+                <p>Versionierung von Dateientfernungen und Pfadänderungen</p>
+                <div>
+                    <h3>git rm [file]</h3>
+                    <p>Löschen der Datei aus dem Projekt und Bereitstellen der Entfernung für den Commit</p>
+                </div>
+                <div>
+                    <h3>git mv [aktueller-path] [neuer-path]</h3>
+                    <p>einen bestehenden Dateipfad ändern und die Verschiebung durchführen</p>
+                </div>
+                <div>
+                    <h3>git log --stat -m</h3>
+                    <p>alle Übergabeprotokolle mit Angabe aller Pfade, die sich verschoben haben, anzeigen</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
